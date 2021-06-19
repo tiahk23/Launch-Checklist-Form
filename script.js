@@ -2,10 +2,19 @@
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
+      event.preventDefault();
       let pilotName = document.querySelector("input[name=pilotName]");
       let coPilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = document.querySelector("input[name=fuelLevel]");
       let cargoMass = document.querySelector("input[name=cargoMass]");
+      //if (fuelLevel < 10000){
+         let pilotStatus = document.querySelector("li[id=pilotStatus]");
+         alert(pilotStatus.innerHTML);
+         let fuelStatus = document.querySelector("li[id=fuelStatus]");
+         let faultyItemsStyle = document.querySelector("element[id=faultyItems]");
+         faultyItemsStyle = "visible";
+         fuelStatus.innerHTML = "Fuel Level NOT high enough for launch.";
+      //}
       if (pilotName.value === "" || coPilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields are required!");
          event.preventDefault();
@@ -14,7 +23,10 @@ window.addEventListener("load", function() {
          alert("Not a Valid Submission.");
          event.preventDefault();
       }
+      
    });
+
+   
 });
 
 
