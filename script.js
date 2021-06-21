@@ -7,14 +7,36 @@ window.addEventListener("load", function() {
       let coPilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = document.querySelector("input[name=fuelLevel]");
       let cargoMass = document.querySelector("input[name=cargoMass]");
-      //if (fuelLevel < 10000){
-         let pilotStatus = document.querySelector("li[id=pilotStatus]");
-         alert(pilotStatus.innerHTML);
+      if (fuelLevel < 10000){
          let fuelStatus = document.querySelector("li[id=fuelStatus]");
-         let faultyItemsStyle = document.querySelector("element[id=faultyItems]");
-         faultyItemsStyle = "visible";
+         let faultyItemsStyle = document.querySelector("element[id=#faultyItems]");
+         let launchStatus = document.querySelector("h2[id=launchStatus]");
+         let launchStatusColor = document.querySelector("element[id=h2]");
+         faultyItemsStyle.innerHTML = "visible";
          fuelStatus.innerHTML = "Fuel Level NOT high enough for launch.";
-      //}
+         launchStatus.innerHTML = "Shuttle not ready for Launch";
+         launchStatusColor.innerHTML = "Red";
+      } else {
+         let launchStatus = document.querySelector("h2[id=launchStatus]");
+         let launchStatusColor = document.querySelector("element[id=h2]");
+         launchStatus.innerHTML = "Shuttle is ready for Launch.";
+         launchStatusColor.innerHTML = "Green";
+      }
+      if (fuelLevel > 10000){
+         let faultyItemsStyle = document.querySelector("element[id=#faultyItems]");
+         let cargoStatus = document.querySelector("li[id=cargoStatus]");
+         let launchStatus = document.querySelector("h2[id=launchStatus]");
+         let launchStatusColor = document.querySelector("element[id=h2]");
+         faultyItemsStyle.innerHTML = "visible";
+         cargoStatus = "There is too much mass for the shuttle to take off";
+         launchStatus.innerHTML = "Shuttle not ready for Launch";
+         launchStatusColor.innerHTML = "Red";
+      } else {
+         let launchStatus = document.querySelector("h2[id=launchStatus]");
+         let launchStatusColor = document.querySelector("element[id=h2]");
+         launchStatus.innerHTML = "Shuttle is ready for Launch.";
+         launchStatusColor.innerHTML = "Green";
+      }
       if (pilotName.value === "" || coPilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields are required!");
          event.preventDefault();
