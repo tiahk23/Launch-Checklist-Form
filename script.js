@@ -15,35 +15,24 @@ window.addEventListener("load", function() {
          alert("Not a Valid Submission.");
          event.preventDefault();
       }
+      let fuelStatus = document.querySelector("li[id=fuelStatus]");
+      let faultyItemsStyle = document.querySelector("#faultyItems").visibility;
+      let launchStatus = document.querySelector("h2[id=launchStatus]");
+      let launchStatusColor = document.querySelector("h2[id=launchStatus]").color;
       if (fuelLevel.value < 10000){
-         let fuelStatus = document.querySelector("li[id=fuelStatus]");
-         let faultyItemsStyle = document.querySelector("element[id=#faultyItems]");
-         let launchStatus = document.querySelector("h2[id=launchStatus]");
-         let launchStatusColor = document.querySelector("element[id=h2]");
-         faultyItemsStyle.innerHTML = "visible";
+         faultyItemsStyle = "visible";
          fuelStatus.innerHTML = "Fuel Level NOT high enough for launch.";
          launchStatus.innerHTML = "Shuttle not ready for Launch";
-         launchStatusColor.innerHTML = "Red";
-      } else {
-         let launchStatus = document.querySelector("h2[id=launchStatus]");
-         let launchStatusColor = document.querySelector("element[id=h2]");
-         launchStatus.innerHTML = "Shuttle is ready for Launch.";
-         launchStatusColor.innerHTML = "Green";
-      }
-      if (cargoMass.value > 10000){
-         let faultyItemsStyle = document.querySelector("element[id=#faultyItems]");
+         launchStatusColor = "red";
+      } else if (cargoMass.value > 10000){
          let cargoStatus = document.querySelector("li[id=cargoStatus]");
-         let launchStatus = document.querySelector("h2[id=launchStatus]");
-         let launchStatusColor = document.querySelector("element[id=h2]");
-         faultyItemsStyle.innerHTML = "visible";
+         faultyItemsStyle = "visible";
          cargoStatus = "There is too much mass for the shuttle to take off";
          launchStatus.innerHTML = "Shuttle not ready for Launch";
-         launchStatusColor.innerHTML = "Red";
+         launchStatusColor = "red";
       } else {
-         let launchStatus = document.querySelector("h2[id=launchStatus]");
-         let launchStatusColor = document.querySelector("element[id=h2]");
          launchStatus.innerHTML = "Shuttle is ready for Launch.";
-         launchStatusColor.innerHTML = "Green";
+         launchStatusColor = "green";
       }
       
       
