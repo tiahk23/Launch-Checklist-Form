@@ -1,13 +1,16 @@
 h1 {
     text-align: center;
 }
+h2 {
+    color:black;
+}
 
 div {
     text-align: left;
 }
 
 #faultyItems {
-    visibility: hidden;   
+    visibility: hidden;  
 }
 
 #launchForm {
