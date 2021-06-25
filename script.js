@@ -16,23 +16,23 @@ window.addEventListener("load", function() {
          event.preventDefault();
       }
       let fuelStatus = document.querySelector("li[id=fuelStatus]");
-      let faultyItemsStyle = document.querySelector("#faultyItems").visibility;
+      let faultyItemsStyle = document.querySelector("#faultyItems");
       let launchStatus = document.querySelector("h2[id=launchStatus]");
-      let launchStatusColor = document.querySelector("h2[id=launchStatus]").color;
+      let launchStatusColor = document.querySelector("h2[id=launchStatus]");
       if (fuelLevel.value < 10000){
-         faultyItemsStyle = "visible";
+         faultyItemsStyle.visibility = "visible";
          fuelStatus.innerHTML = "Fuel Level NOT high enough for launch.";
          launchStatus.innerHTML = "Shuttle not ready for Launch";
-         launchStatusColor = "red";
+         launchStatusColor.color = "red";
       } else if (cargoMass.value > 10000){
          let cargoStatus = document.querySelector("li[id=cargoStatus]");
-         faultyItemsStyle = "visible";
+         faultyItemsStyle.visibility = "visible";
          cargoStatus = "There is too much mass for the shuttle to take off";
          launchStatus.innerHTML = "Shuttle not ready for Launch";
-         launchStatusColor = "red";
+         launchStatusColor.color = "red";
       } else {
          launchStatus.innerHTML = "Shuttle is ready for Launch.";
-         launchStatusColor = "green";
+         launchStatusColor.color = "green";
       }
       
       
