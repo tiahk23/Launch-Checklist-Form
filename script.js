@@ -15,6 +15,10 @@ window.addEventListener("load", function() {
          alert("Not a Valid Submission.");
          event.preventDefault();
       }
+      let pilotStatus = document.querySelector("li[id=pilotStatus]");
+      pilotStatus.innerHTML = `${pilotName.value} is ready for launch!`;
+      let coPilotStatus = document.querySelector("li[id=copilotStatus]");
+      coPilotStatus.innerHTML = `${coPilotName.value} is ready for launch!`;
       let fuelStatus = document.querySelector("li[id=fuelStatus]");
       let faultyItemsStyle = document.querySelector("#faultyItems");
       let launchStatus = document.querySelector("h2[id=launchStatus]");
@@ -57,17 +61,3 @@ window.addEventListener("load", function() {
                });
             });
 });
-
-
-
-/* This block of code shows how to format the HTML once you fetch some planetary JSON!
-<h2>Mission Destination</h2>
-<ol>
-   <li>Name: ${}</li>
-   <li>Diameter: ${}</li>
-   <li>Star: ${}</li>
-   <li>Distance from Earth: ${}</li>
-   <li>Number of Moons: ${}</li>
-</ol>
-<img src="${}">
-*/
