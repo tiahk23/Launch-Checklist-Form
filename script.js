@@ -22,8 +22,6 @@ window.addEventListener("load", function() {
       if (fuelLevel.value < 10000){
          launchStatusColor.setAttribute('style','color:red');
          faultyItemsStyle.setAttribute('style', 'visibility:visible');
-         //launchStatusColor.style.Color = "red";
-         //faultyItemsStyle.style.Visibility = "visible";
          fuelStatus.innerHTML = "Fuel Level too low for launch.";
          launchStatus.innerHTML = "Shuttle not ready for Launch";
          
@@ -48,13 +46,13 @@ window.addEventListener("load", function() {
                   div.innerHTML = `
                   <h2>Mission Destination</h2>
                   <ol>
-                     <li>Name: ${json[3].name}</li>
-                     <li>Diameter: ${json[3].diameter}</li>
-                     <li>Star: ${json[3].star}</li>
-                     <li>Distance from Earth: ${json[3].distance}</li>
-                     <li>Number of Moons: ${json[3].moons}</li>
+                     <li>Name: ${json[2].name}</li>
+                     <li>Diameter: ${json[2].diameter}</li>
+                     <li>Star: ${json[2].star}</li>
+                     <li>Distance from Earth: ${json[2].distance}</li>
+                     <li>Number of Moons: ${json[2].moons}</li>
                   </ol>
-                  <img src="${json[3].image}">
+                  <img src="${json[2].image}">
                   `;
                });
             });
